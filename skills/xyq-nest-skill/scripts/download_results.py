@@ -15,7 +15,7 @@ sys.path.insert(0, os.path.dirname(__file__))
 def download_file(url, filepath):
     """下载单个文件"""
     import shutil
-    req = urllib.request.Request(url, headers={"User-Agent": "XYQ-Skill/1.0"})
+    req = urllib.request.Request(url, headers={"User-Agent": "XYQ-Nest-Skill/1.0"})
     tmp_path = filepath + ".tmp"
     try:
         with urllib.request.urlopen(req, timeout=600) as resp:
