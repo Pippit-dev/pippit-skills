@@ -106,7 +106,7 @@ def main():
     args = parser.parse_args()
 
     data = upload_file(args.file)
-    asset_id = data.get("asset_id", "")
+    asset_id = data.get("pippit_asset_id", "")
 
     if not asset_id:
         print("错误：未返回 asset_id", file=sys.stderr)
