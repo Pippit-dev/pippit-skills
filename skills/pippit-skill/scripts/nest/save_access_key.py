@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Save a Pippit access key to the local secure cache for reuse."""
+"""Save a Pippit access key to the local reusable skill cache."""
 
 import argparse
 import json
@@ -12,12 +12,12 @@ from _common import ACCESS_KEY_STORAGE_KEY, DEFAULT_ACCESS_KEY_FILE, save_access
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Save a Pippit access key to the local cache file under the default key name PippitAccessKey",
+        description="Save a Pippit access key locally under the PippitAccessKey key.",
         epilog="""
 Priority:
   1. --access-key
-  2. Environment variable PIPPIT_ACCESS_KEY
-  3. Environment variable PippitAccessKey
+  2. PIPPIT_ACCESS_KEY
+  3. PippitAccessKey
 
 Examples:
   python3 save_access_key.py --access-key 'ak_xxx'
@@ -29,7 +29,7 @@ Examples:
     parser.add_argument(
         "--path",
         default=DEFAULT_ACCESS_KEY_FILE,
-        help="Local cache file path; defaults to $CODEX_HOME/pippit-one-stop-skill/secrets.json",
+        help="Cache file path. Defaults to $CODEX_HOME/pippit-skill/secrets.json",
     )
     args = parser.parse_args()
 
@@ -39,7 +39,7 @@ Examples:
         or os.environ.get(ACCESS_KEY_STORAGE_KEY, "").strip()
     )
     if not access_key:
-        print("Error: provide an access key with --access-key or an environment variable", file=sys.stderr)
+        print("Error: provide an access key through --access-key or an environment variable", file=sys.stderr)
         sys.exit(1)
 
     path = save_access_key(access_key, args.path)

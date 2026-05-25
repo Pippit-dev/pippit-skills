@@ -1,6 +1,6 @@
 ---
-name: pippit-one-stop-skill
-description: Self-contained end-to-end Pippit.ai skill for AI creative generation/editing, generated asset downloads, overseas social video publishing, scheduling, task management, and analytics. Use when the user wants a one-stop Pippit flow from prompt or reference image/video assets to generated video, local download, TikTok/Facebook Page/Instagram scheduling, publish task CRUD, or performance analysis; also use for Pippit access-key setup for either creation or publishing.
+name: pippit-skill
+description: Self-contained end-to-end Pippit.ai skill for AI creative generation/editing, generated asset downloads, overseas social video publishing, scheduling, task management, and analytics. Use when the user wants an end-to-end Pippit flow from prompt or reference image/video assets to generated video, local download, TikTok/Facebook Page/Instagram scheduling, publish task CRUD, or performance analysis; also use for Pippit access-key setup for either creation or publishing.
 user-invocable: true
 metadata:
   {
@@ -17,7 +17,7 @@ metadata:
   }
 ---
 
-# Pippit One-Stop Workflow
+# Pippit Skill Workflow
 
 Use this self-contained skill for overseas Pippit.ai workflows. It includes both backend script sets locally:
 
@@ -32,7 +32,7 @@ Pippit Nest owns creative interpretation, prompt expansion, model choice, storyb
 
 - **Creative only**: Use `scripts/nest/` to generate/edit, poll, and download outputs. Stop after returning local files unless the user asks to publish.
 - **Publish only**: Use `scripts/publish/` for existing local videos, bound account checks, scheduling, task CRUD, or analytics.
-- **One-stop create-to-publish**: Use `scripts/nest/` first, download the generated video, then use `scripts/publish/` to upload and schedule it.
+- **Create-to-publish**: Use `scripts/nest/` first, download the generated video, then use `scripts/publish/` to upload and schedule it.
 - **Image-only output**: Publishing supports video only. If the user wants to publish an image/poster, ask whether to generate or convert it into a video first.
 
 ## Creative Request Handling
@@ -49,7 +49,7 @@ Use one Pippit access key for both creation and publishing. Resolve it in this o
 
 1. `PIPPIT_ACCESS_KEY`
 2. `PippitAccessKey`
-3. Local cache at `$CODEX_HOME/pippit-one-stop-skill/secrets.json`
+3. Local cache at `$CODEX_HOME/pippit-skill/secrets.json`
 
 Save a new key once with either local save script:
 
@@ -59,7 +59,7 @@ python3 {baseDir}/scripts/nest/save_access_key.py --access-key "..."
 
 Do not invent, retrieve, or echo the full access key. If no key is available, respond in English: "No Pippit access key is configured. Please get one from https://www.pippit.ai, then provide it or save it before continuing."
 
-## One-Stop Flow
+## End-to-End Flow
 
 1. Collect the minimum missing inputs:
    - Creative request and any reference image/video files

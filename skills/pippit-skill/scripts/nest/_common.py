@@ -14,7 +14,7 @@ CODEX_HOME = os.environ.get("CODEX_HOME", os.path.expanduser("~/.codex"))
 ACCESS_KEY_STORAGE_KEY = "PippitAccessKey"
 DEFAULT_ACCESS_KEY_FILE = os.environ.get(
     "PIPPIT_ACCESS_KEY_FILE",
-    os.path.join(CODEX_HOME, "pippit-one-stop-skill", "secrets.json"),
+    os.path.join(CODEX_HOME, "pippit-skill", "secrets.json"),
 )
 
 SUBMIT_RUN_PATH = "/api/biz/v1/skill/submit_run"

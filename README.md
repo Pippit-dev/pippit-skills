@@ -13,14 +13,14 @@ Pippit is an AI creative platform from ByteDance/CapCut for creators and AI agen
 
 | Skill | Description | Key scripts |
 |------|-------------|-------------|
-| `pippit-one-stop-skill` | End-to-end Pippit skill for generation/editing, downloads, social account lookup, scheduled publishing task management, and analytics. | `submit_run.py`, `get_thread.py`, `upload_file.py`, `batchcreate_schedule_task.py`, `list_videos.py` |
+| `pippit-skill` | End-to-end Pippit skill for generation/editing, downloads, social account lookup, scheduled publishing task management, and analytics. | `submit_run.py`, `get_thread.py`, `upload_file.py`, `batchcreate_schedule_task.py`, `list_videos.py` |
 
 ## Installation
 
 Install with `npx skills`:
 
 ```bash
-npx skills add https://github.com/Pippit-dev/pippit-skills.git --skill pippit-one-stop-skill -y -g
+npx skills add https://github.com/Pippit-dev/pippit-skills.git --skill pippit-skill -y -g
 ```
 
 ## Authentication
@@ -54,7 +54,7 @@ pippit-skills/
 ├── LICENSE
 ├── README.md
 └── skills/
-    └── pippit-one-stop-skill/
+    └── pippit-skill/
         ├── SKILL.md
         ├── .gitignore
         ├── references/

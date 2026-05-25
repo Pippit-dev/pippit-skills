@@ -1,4 +1,4 @@
-# Pippit One-Stop Command Map
+# Pippit Skill Command Map
 
 ## Creation Scripts
 
